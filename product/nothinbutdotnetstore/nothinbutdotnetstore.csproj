@@ -69,6 +69,7 @@
     <Compile Include="infrastructure\containers\DependencyContainer.cs" />
     <Compile Include="infrastructure\DefaultMapper.cs" />
     <Compile Include="infrastructure\DiscreteMapper.cs" />
+    <Compile Include="infrastructure\logging\DefaultLoggingFactory.cs" />
     <Compile Include="infrastructure\logging\Log.cs" />
     <Compile Include="infrastructure\logging\Logger.cs" />
     <Compile Include="infrastructure\logging\LoggerFactory.cs" />

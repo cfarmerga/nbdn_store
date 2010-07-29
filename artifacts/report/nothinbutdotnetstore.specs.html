@@ -113,9 +113,9 @@ div.supplement {
     nothinbutdotnetstore.specs
 </h1>
 <h2 class="count">
-  7 concerns,
-  13 contexts,
-  15 specifications
+  17 concerns,
+  25 contexts,
+  28 specifications
 </h2>
 
   <hr/>
@@ -124,7 +124,7 @@ div.supplement {
    specifications
 </h2>
 <h3 class="count">
-  6 contexts, 8 specifications
+  7 contexts, 9 specifications
 </h3><h3 class="context">
   when a message is sent
 </h3>
@@ -186,7 +186,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="11">should always be reusable</a>
+</h4><ul><li class="spec"><a name="24">should always be reusable</a>
 
 
 
@@ -199,7 +199,20 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="8">should return a missing command</a>
+</h4><ul><li class="spec"><a name="11">should return a missing command</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h3 class="context">
+  when mapping a value from a payload
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="15">should return the value as the correct type</a>
 
 
 
@@ -234,6 +247,24 @@ div.supplement {
 
           </li>
         </ul><h2 class="concern">
+  Container specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when providing access to the underlying container behaviour
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="7">should return the gateway to the container services</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
   DefaultCommandRegistry specifications
 </h2>
 <h3 class="count">
@@ -243,7 +274,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="7">should return the command that can handle the request</a>
+</h4><ul><li class="spec"><a name="10">should return the command that can handle the request</a>
 
 
 
@@ -261,7 +292,43 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="10">should delegate processing to the command for the request</a>
+</h4><ul><li class="spec"><a name="23">should delegate processing to the command for the request</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DefaultMapper specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when mapping an input to an output
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="9">should return the output mapped using the appropriate discrete mapper</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DefaultRequest specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when mappping an input model
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="17">should return the model mapped from the payload</a>
 
 
 
@@ -279,7 +346,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="13">should make the determination by using its request specification</a>
+</h4><ul><li class="spec"><a name="26">should make the determination by using its request specification</a>
 
 
 
@@ -292,7 +359,117 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="14">should delegate the processing to the application specific command</a>
+</h4><ul><li class="spec"><a name="27">should delegate the processing to the application specific command</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DefaultResponseEngine specifications
+</h2>
+<h3 class="count">
+  1 context, 2 specifications
+</h3><h3 class="context">
+  when displaying a model
+</h3>
+<h4 class="count">
+  2 specifications
+</h4><ul><li class="spec"><a name="18">should update the model property on the view</a>
+
+
+
+
+ 
+
+          </li><li class="spec"><a name="19">should tell the view that can display the model to render</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DefaultViewRegistry specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when getting a view for a display model
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="21">should return an http handler that can be used to render the model</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  DepartmentMapper specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when mapping a department from a payload
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="12">should map the department using the payload values</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  Log specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when providing access to the underlying logging api
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="8">should return the logging api it was configured to use</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  PayloadKey`1 specifications
+</h2>
+<h3 class="count">
+  2 contexts, 2 specifications
+</h3><h3 class="context">
+  when implicitly converting to a string
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="13">should return the name of the key</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h3 class="context">
+  when rendering as string
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="14">should return the name of the key</a>
 
 
 
@@ -310,7 +487,25 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="12">should delegate the processing of the request to the front controller</a>
+</h4><ul><li class="spec"><a name="25">should delegate the processing of the request to the front controller</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  RequestFactory specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when creating a request from an http context
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="16">should create the request based on the original http context</a>
 
 
 
@@ -328,7 +523,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="15">should render the list of main departments</a>
+</h4><ul><li class="spec"><a name="28">should render the list of main departments</a>
 
 
 
@@ -337,7 +532,25 @@ div.supplement {
 
           </li>
         </ul><h2 class="concern">
-  ViewSubDpartmentsSpecs specifications
+  ViewProductsInADepartment specifications
+</h2>
+<h3 class="count">
+  1 context, 1 specification
+</h3><h3 class="context">
+  when viewing the products in a department
+</h3>
+<h4 class="count">
+  1 specification
+</h4><ul><li class="spec"><a name="20">should render a list of products in a department</a>
+
+
+
+
+ 
+
+          </li>
+        </ul><h2 class="concern">
+  ViewSubDepartmentsInADepartmentSpecs specifications
 </h2>
 <h3 class="count">
   1 context, 1 specification
@@ -346,7 +559,7 @@ div.supplement {
 </h3>
 <h4 class="count">
   1 specification
-</h4><ul><li class="spec"><a name="9">should render the list of sub departments</a>
+</h4><ul><li class="spec"><a name="22">should render the list of sub departments</a>
 
 
 
