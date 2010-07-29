@@ -25,6 +25,7 @@ namespace nothinbutdotnetstore.specs.web
                 model_mapper.Stub(x => x.map<NameValueCollection,OurMappedModel>(payload)).Return(model_value);
 
                 provide_a_basic_sut_constructor_argument(payload);
+                provide_a_basic_sut_constructor_argument("sdfsd");
             };
 
             Because b = () =>

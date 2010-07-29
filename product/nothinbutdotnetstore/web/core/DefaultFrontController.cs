@@ -1,5 +1,3 @@
-using nothinbutdotnetstore.web.core.stubs;
-
 namespace nothinbutdotnetstore.web.core
 {
     public class DefaultFrontController : FrontController

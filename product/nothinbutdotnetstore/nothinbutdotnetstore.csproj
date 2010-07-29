@@ -64,8 +64,15 @@
   <ItemGroup>
     <Compile Include="DefaultCalculator.cs" />
     <Compile Include="infrastructure\categorization\FactoryAttribute.cs" />
+    <Compile Include="infrastructure\containers\Container.cs" />
+    <Compile Include="infrastructure\containers\ContainerResolver.cs" />
+    <Compile Include="infrastructure\containers\DependencyContainer.cs" />
     <Compile Include="infrastructure\DefaultMapper.cs" />
     <Compile Include="infrastructure\DiscreteMapper.cs" />
+    <Compile Include="infrastructure\logging\Log.cs" />
+    <Compile Include="infrastructure\logging\Logger.cs" />
+    <Compile Include="infrastructure\logging\LoggerFactory.cs" />
+    <Compile Include="infrastructure\logging\LoggingFactoryResolver .cs" />
     <Compile Include="infrastructure\MapperRegistry.cs" />
     <Compile Include="infrastructure\stubs\StubMapperRegistry.cs" />
     <Compile Include="MessageGenerator.cs" />

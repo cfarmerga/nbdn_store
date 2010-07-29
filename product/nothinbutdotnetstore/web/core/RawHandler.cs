@@ -1,5 +1,5 @@
 using System.Web;
-using nothinbutdotnetstore.web.core.stubs;
+using nothinbutdotnetstore.infrastructure.containers;
 
 namespace nothinbutdotnetstore.web.core
 {
@@ -7,6 +7,11 @@ namespace nothinbutdotnetstore.web.core
     {
         FrontController front_controller;
         RequestFactory request_factory;
+
+        public RawHandler():this(Container.retrieve.an<FrontController>(),
+            Container.retrieve.an<RequestFactory>())
+        {
+        }
 
         public RawHandler(FrontController front_controller, RequestFactory request_factory)
         {
