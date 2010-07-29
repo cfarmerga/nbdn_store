@@ -11,11 +11,6 @@ namespace nothinbutdotnetstore.web.application.catalogbrowsing
         CatalogBrowsingTasks catalog_browsing_tasks;
         ResponseEngine response_engine;
 
-        public ViewSubDepartmentsInADepartment()
-            : this(new StubCatalogBrowsingTasks(), new DefaultResponseEngine())
-        {
-        }
-
         public ViewSubDepartmentsInADepartment(CatalogBrowsingTasks catalog_browsing_tasks, ResponseEngine response_engine)
         {
             this.catalog_browsing_tasks = catalog_browsing_tasks;

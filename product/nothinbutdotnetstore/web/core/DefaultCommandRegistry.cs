@@ -13,10 +13,6 @@ namespace nothinbutdotnetstore.web.core
             this.commands = commands;
         }
 
-        public DefaultCommandRegistry() : this(new StubSetOfCommands())
-        {
-        }
-
         public RequestCommand get_command_that_can_handle(Request request)
         {
             return commands.FirstOrDefault(command => command.can_process(request))

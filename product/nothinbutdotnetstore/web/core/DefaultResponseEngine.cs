@@ -14,10 +14,6 @@ namespace nothinbutdotnetstore.web.core
 
         ViewRegistry view_registry;
 
-        public DefaultResponseEngine() : this(new DefaultViewRegistry())
-        {
-        }
-
         public DefaultResponseEngine(ViewRegistry view_registry)
         {
             this.view_registry = view_registry;

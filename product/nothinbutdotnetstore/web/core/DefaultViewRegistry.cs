@@ -14,10 +14,6 @@ namespace nothinbutdotnetstore.web.core
 
         ViewPathRegistry view_path_registry;
 
-        public DefaultViewRegistry():this(new StubViewPathRegistry())
-        {
-        }
-
         public DefaultViewRegistry(ViewPathRegistry view_path_registry)
         {
             this.view_path_registry = view_path_registry;

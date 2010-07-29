@@ -103,7 +103,6 @@
     <Compile Include="web\core\RequestFactory.cs" />
     <Compile Include="infrastructure\Mapper.cs" />
     <Compile Include="web\core\ResponseEngine.cs" />
-    <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
     <Compile Include="web\core\stubs\StubViewPathRegistry.cs" />
     <Compile Include="web\core\TheViewFactory.cs" />
     <Compile Include="web\core\View.cs" />

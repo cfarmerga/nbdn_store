@@ -6,10 +6,6 @@ namespace nothinbutdotnetstore.web.core
     {
         CommandRegistry command_registry;
 
-        public DefaultFrontController() : this(new DefaultCommandRegistry(new StubSetOfCommands()))
-        {
-        }
-
         public DefaultFrontController(CommandRegistry command_registry)
         {
             this.command_registry = command_registry;
