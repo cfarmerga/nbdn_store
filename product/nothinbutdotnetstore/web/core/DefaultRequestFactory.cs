@@ -1,16 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Web;
+using nothinbutdotnetstore.infrastructure;
 
 namespace nothinbutdotnetstore.web.core
 {
-    public class DefaultRequestFactory:RequestFactory
+    public class DefaultRequestFactory : RequestFactory
     {
+        Mapper mapper;
+
+        public DefaultRequestFactory(Mapper mapper)
+        {
+            this.mapper = mapper;
+        }
+
         public Request create_request_from(HttpContext http_context)
         {
-            throw new NotImplementedException();
+            return new DefaultRequest(mapper, http_context.Request.Params,
+                                      http_context.Request.RawUrl);
         }
     }
 }

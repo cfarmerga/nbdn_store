@@ -6,8 +6,8 @@ namespace nothinbutdotnetstore.web.core
 {
     public class DefaultRequest : Request
     {
-        Mapper mapper;
-        NameValueCollection payload;
+        public Mapper mapper;
+        public NameValueCollection payload;
         public string command { get; private set; }
 
         public DefaultRequest(Mapper mapper, NameValueCollection payload,string command)
