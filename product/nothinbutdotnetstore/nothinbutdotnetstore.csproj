@@ -72,7 +72,6 @@
     <Compile Include="infrastructure\logging\Log.cs" />
     <Compile Include="infrastructure\logging\Logger.cs" />
     <Compile Include="infrastructure\logging\LoggerFactory.cs" />
-    <Compile Include="infrastructure\logging\LoggingFactoryResolver .cs" />
     <Compile Include="infrastructure\MapperRegistry.cs" />
     <Compile Include="infrastructure\stubs\StubMapperRegistry.cs" />
     <Compile Include="MessageGenerator.cs" />

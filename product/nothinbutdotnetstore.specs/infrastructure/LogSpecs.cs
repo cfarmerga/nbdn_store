@@ -29,10 +29,8 @@ namespace nothinbutdotnetstore.specs.infrastructure
                     x => x.get_logger_bound_to(typeof(when_providing_access_to_the_underlying_logging_api))).Return(
                         the_logger);
 
-                LoggingFactoryResolver resolver = () => logger_factory;
                 ContainerResolver container_resolver = () => container;
 
-                change(() => Log.logging_factory_resolver).to(resolver);
                 change(() => Container.container_resolver).to(container_resolver);
 
             };
