@@ -78,8 +78,10 @@
   <ItemGroup>
     <Compile Include="example\CalculatorSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
+    <Compile Include="utility\Link.cs" />
     <Compile Include="utility\ObjectMother.cs" />
     <Compile Include="web\CommandRegistrySpecs.cs" />
+    <Compile Include="web\LinkBuilderSpecs.cs" />
     <Compile Include="web\ResponseEngineSpecs.cs" />
     <Compile Include="web\ViewProductsSpec.cs" />
     <Compile Include="web\ViewRegistrySpecs.cs" />
