@@ -8,9 +8,11 @@ namespace nothinbutdotnetstore.web.core
     {
         Mapper mapper;
         NameValueCollection payload;
+        public string command { get; private set; }
 
-        public DefaultRequest(Mapper mapper, NameValueCollection payload)
+        public DefaultRequest(Mapper mapper, NameValueCollection payload,string command)
         {
+            this.command = command;
             this.mapper = mapper;
             this.payload = payload;
         }
@@ -18,11 +20,6 @@ namespace nothinbutdotnetstore.web.core
         public InputModel map<InputModel>()
         {
             return mapper.map<NameValueCollection,InputModel>(payload);
-        }
-
-        public string command
-        {
-            get { throw new NotImplementedException(); }
         }
     }
 }
