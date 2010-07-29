@@ -4,6 +4,7 @@ Inherits="nothinbutdotnetstore.web.ui.views.DepartmentBrowser" MasterPageFile="S
 CodeFile="DepartmentBrowser.aspx.cs"%>
 <%@ Import Namespace="System.Collections.Generic" %>
 <%@ Import Namespace="nothinbutdotnetstore.model" %>
+<%@ Import Namespace="nothinbutdotnetstore.web.application.catalogbrowsing" %>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
     <p class="ListHead">Select An Department</p>
 
@@ -11,13 +12,11 @@ CodeFile="DepartmentBrowser.aspx.cs"%>
             <% foreach (var department in this.display_model) { %>
             <tr class="ListItem">
                 <td>
+<%
+                        Link<Department>.for_a(department).when(some_criteria).render_with<ViewMainDepartments>();
+                        Link<Department>.for_a(department).when(some_criteria).render_with<ViewMainDepartments>().otherwise.render_with<ViewSubDepartmentsInADepartment>();
 
-
-                                          .when(x => !x.has_sub_departments, "ViewProducts")
-                                          .render(department) %>
-
-
-                    <% if (department.has_sub_departments)
+                      
                        {%>
                     <a href="/dept.store/ViewSubDepartments?d=<%= department.name %>"><%=department.name%></a>
                     <%
