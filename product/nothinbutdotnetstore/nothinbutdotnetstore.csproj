@@ -78,6 +78,7 @@
     <Compile Include="web\core\CurrentContextResolver.cs" />
     <Compile Include="web\core\DefaultCommandRegistry.cs" />
     <Compile Include="web\core\DefaultFrontController.cs" />
+    <Compile Include="web\core\DefaultRequest.cs" />
     <Compile Include="web\core\DefaultRequestCommand.cs" />
     <Compile Include="web\core\DefaultResponseEngine.cs" />
     <Compile Include="web\core\DefaultViewFor.cs">
