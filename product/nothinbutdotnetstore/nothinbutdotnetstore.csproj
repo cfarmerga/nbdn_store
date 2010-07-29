@@ -64,6 +64,9 @@
   <ItemGroup>
     <Compile Include="DefaultCalculator.cs" />
     <Compile Include="infrastructure\categorization\FactoryAttribute.cs" />
+    <Compile Include="infrastructure\DefaultMapper.cs" />
+    <Compile Include="infrastructure\DiscreteMapper.cs" />
+    <Compile Include="infrastructure\MapperRegistry.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="model\Department.cs" />
     <Compile Include="model\Product.cs" />
@@ -73,6 +76,9 @@
     <Compile Include="web\application\catalogbrowsing\ViewMainDepartments.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewProductsInADepartment.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewSubDepartmentsInADepartment.cs" />
+    <Compile Include="web\application\DepartmentMapper.cs" />
+    <Compile Include="web\application\InputModels.cs" />
+    <Compile Include="web\application\PayloadKey.cs" />
     <Compile Include="web\core\ApplicationCommand.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\CurrentContextResolver.cs" />
@@ -93,7 +99,7 @@
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\RequestCriteria.cs" />
     <Compile Include="web\core\RequestFactory.cs" />
-    <Compile Include="web\core\RequestModelMapper.cs" />
+    <Compile Include="infrastructure\Mapper.cs" />
     <Compile Include="web\core\ResponseEngine.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />

@@ -77,9 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="example\CalculatorSpecs.cs" />
+    <Compile Include="infrastructure\MapperSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="utility\ObjectMother.cs" />
     <Compile Include="web\CommandRegistrySpecs.cs" />
+    <Compile Include="web\DepartmentMapperSpecs.cs" />
+    <Compile Include="web\PayloadKeySpecs.cs" />
     <Compile Include="web\RequestSpecs.cs" />
     <Compile Include="web\ResponseEngineSpecs.cs" />
     <Compile Include="web\ViewProductsSpec.cs" />
