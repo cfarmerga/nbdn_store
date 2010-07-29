@@ -1,8 +1,14 @@
+using nothinbutdotnetstore.infrastructure.stubs;
+
 namespace nothinbutdotnetstore.infrastructure
 {
     public class DefaultMapper : Mapper
     {
         MapperRegistry mapper_registry;
+
+        public DefaultMapper():this(new StubMapperRegistry())
+        {
+        }
 
         public DefaultMapper(MapperRegistry mapper_registry)
         {

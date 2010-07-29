@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{922EF2FE-820B-4ED5-9D64-7D716E135719}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -67,6 +67,7 @@
     <Compile Include="infrastructure\DefaultMapper.cs" />
     <Compile Include="infrastructure\DiscreteMapper.cs" />
     <Compile Include="infrastructure\MapperRegistry.cs" />
+    <Compile Include="infrastructure\stubs\StubMapperRegistry.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="model\Department.cs" />
     <Compile Include="model\Product.cs" />
@@ -102,7 +103,6 @@
     <Compile Include="web\core\RequestFactory.cs" />
     <Compile Include="infrastructure\Mapper.cs" />
     <Compile Include="web\core\ResponseEngine.cs" />
-    <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
     <Compile Include="web\core\stubs\StubViewPathRegistry.cs" />
     <Compile Include="web\core\TheViewFactory.cs" />

@@ -12,15 +12,6 @@ CodeFile="DepartmentBrowser.aspx.cs"%>
             <% foreach (var department in this.display_model) { %>
             <tr class="ListItem">
                 <td>
-                    <%= 
-                        Link<Department>
-                        .to<ViewSubDepartmentsInADepartment>.when(x => x.has_sub_departments())
-                        .to<ViewProductsInADepartment>.when(x => !x.has_sub_departments())
-                        .providing("department_name", x => x.department_name)
-                        .text(department.name)
-
-                        %>
-
 
                     <% if (department.has_sub_departments)
                        {%>
