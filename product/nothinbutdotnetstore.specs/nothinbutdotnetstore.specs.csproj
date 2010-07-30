@@ -83,6 +83,7 @@
     <Compile Include="infrastructure\DefaultDependencyFactorySpecs.cs" />
     <Compile Include="infrastructure\LogSpecs.cs" />
     <Compile Include="infrastructure\MapperSpecs.cs" />
+    <Compile Include="infrastructure\SingletonDependencyFactorySpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
     <Compile Include="utility\ObjectMother.cs" />
     <Compile Include="web\CommandRegistrySpecs.cs" />
