@@ -48,6 +48,26 @@ namespace nothinbutdotnetstore.specs.infrastructure
          }
 
          [Subject(typeof(CustomDependencyContainer))]
+         public class when_retrieving_an_instance_of_a_dependency_non_generically : concern
+         {
+
+             Establish c = () =>
+             {
+                 connection = new SqlConnection();
+                 factory.Stub(x => x.create()).Return(connection);
+             };
+
+             Because b = () =>
+                 result = sut.an(typeof(IDbConnection));
+
+             It should_return_the_dependency_created_using_the_dependency_factory = () =>
+                 result.ShouldEqual(connection);
+
+             static object result;
+             static IDbConnection connection;
+         }
+
+         [Subject(typeof(CustomDependencyContainer))]
          public class when_retrieving_a_dependency_and_the_factory_for_the_dependency_throws_an_exception : concern
          {
 
