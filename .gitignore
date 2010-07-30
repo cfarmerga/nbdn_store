@@ -20,3 +20,4 @@ artifacts
 /product/config/hibernate.cfg.xml
 /product/*.web.ui/Bin
 open.bat
+*.orig
