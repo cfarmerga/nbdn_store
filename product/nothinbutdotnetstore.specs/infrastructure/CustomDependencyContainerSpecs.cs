@@ -15,7 +15,16 @@ namespace nothinbutdotnetstore.specs.infrastructure
          public abstract class concern : Observes<DependencyContainer,
                                              CustomDependencyContainer>
          {
-        
+             Establish c = () =>
+             {
+                 factory =an<DependencyFactory>();
+                 dependency_factory_registry = the_dependency<DependencyFactories>();
+                 dependency_factory_registry.Stub(x => x.get_dependency_factory_for(typeof(IDbConnection))).Return(factory);
+             };
+
+             protected static DependencyFactories dependency_factory_registry;
+             protected static DependencyFactory factory;
+
          }
 
          [Subject(typeof(CustomDependencyContainer))]
@@ -24,12 +33,8 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
              Establish c = () =>
              {
-                 dependency_factory_registry = the_dependency<DependencyFactories>();
-                 factory =an<DependencyFactory>();
-
                  connection = new SqlConnection();
                  factory.Stub(x => x.create()).Return(connection);
-                 dependency_factory_registry.Stub(x => x.get_dependency_factory_for(typeof(IDbConnection))).Return(factory);
              };
 
              Because b = () =>
@@ -40,8 +45,6 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
              static IDbConnection result;
              static IDbConnection connection;
-             static DependencyFactories dependency_factory_registry;
-             static DependencyFactory factory;
          }
 
          [Subject(typeof(CustomDependencyContainer))]
@@ -50,11 +53,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
 
              Establish c = () =>
              {
-                 dependency_factory_registry = the_dependency<DependencyFactories>();
-                 factory =an<DependencyFactory>();
                  inner_exception = new Exception();
-
-                 dependency_factory_registry.Stub(x => x.get_dependency_factory_for(typeof(IDbConnection))).Return(factory);
                  factory.Stub(x => x.create()).Throw(inner_exception);
              };
 
@@ -68,8 +67,6 @@ namespace nothinbutdotnetstore.specs.infrastructure
                  creation_exception.type_that_could_not_be_created.ShouldEqual(typeof(IDbConnection));
              };
 
-             static DependencyFactories dependency_factory_registry;
-             static DependencyFactory factory;
              static Exception inner_exception;
          }
      }
