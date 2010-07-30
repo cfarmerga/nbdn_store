@@ -75,6 +75,7 @@
     <Compile Include="infrastructure\containers\custom\DependencyFactories.cs" />
     <Compile Include="infrastructure\containers\custom\DependencyFactory.cs" />
     <Compile Include="infrastructure\containers\custom\DependencyFactoryNotRegisteredException.cs" />
+    <Compile Include="infrastructure\containers\custom\GreedyConstructorResolver.cs" />
     <Compile Include="infrastructure\containers\custom\SingletonDependencyFactory.cs" />
     <Compile Include="infrastructure\containers\DependencyContainer.cs" />
     <Compile Include="infrastructure\DefaultMapper.cs" />
