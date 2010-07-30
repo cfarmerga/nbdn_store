@@ -4,15 +4,18 @@ namespace nothinbutdotnetstore.infrastructure
 {
     public static class FuncExtension
     {
-        public static Func<T> cache_result<T>(this Func<T> factory) where T : class
+        public static Func<T> cache_result<T>(this Func<T> factory) 
         {
-            T cached = null;
+            T cached = default(T);
+            var is_cached = false;
+
             return () =>
                        {
-                           if (cached == null)
-                               cached = factory();
+                           //TODO - Refactor this
+                           if (is_cached) return cached;
+                           is_cached = true;
+                           cached = factory();
                            return cached;
-                           //return factory();
                        };
         }
     }
