@@ -19,18 +19,24 @@ namespace nothinbutdotnetstore.tasks.startup
             var constructor_resolver = new GreedyConstructorResolver();
             Container.container_resolver = () => container;
 
-            //remainder of setup
-            factories.Add(typeof(CommandRegistry), new AutoWiringDependencyFactory(constructor_resolver, typeof(DefaultCommandRegistry), container));
-            factories.Add(typeof(FrontController), new AutoWiringDependencyFactory(constructor_resolver, typeof(DefaultFrontController), container));
-            factories.Add(typeof(Mapper), new AutoWiringDependencyFactory(constructor_resolver, typeof(DefaultMapper), container));
-            factories.Add(typeof(RequestFactory), new AutoWiringDependencyFactory(constructor_resolver, typeof(DefaultRequestFactory), container));
-            factories.Add(typeof(ResponseEngine), new AutoWiringDependencyFactory(constructor_resolver, typeof(DefaultResponseEngine), container));
-            factories.Add(typeof(ViewRegistry), new AutoWiringDependencyFactory(constructor_resolver, typeof(DefaultViewRegistry), container));
+            Dictionary<Type, Type> graph = new Dictionary<Type, Type>();
 
-            factories.Add(typeof(CatalogBrowsingTasks), new AutoWiringDependencyFactory(constructor_resolver, typeof(StubCatalogBrowsingTasks), container));
-            factories.Add(typeof(IEnumerable<RequestCommand>), new AutoWiringDependencyFactory(constructor_resolver, typeof(StubSetOfCommands), container));
-            factories.Add(typeof(MapperRegistry), new AutoWiringDependencyFactory(constructor_resolver, typeof(StubMapperRegistry), container));
-            factories.Add(typeof(ViewPathRegistry), new AutoWiringDependencyFactory(constructor_resolver, typeof(StubViewPathRegistry), container));
+            graph.Add(typeof(CommandRegistry), typeof(DefaultCommandRegistry));
+            graph.Add(typeof(FrontController), typeof(DefaultFrontController));
+            graph.Add(typeof(Mapper), typeof(DefaultMapper));
+            graph.Add(typeof(RequestFactory), typeof(DefaultRequestFactory));
+            graph.Add(typeof(ResponseEngine), typeof(DefaultResponseEngine));
+            graph.Add(typeof(ViewRegistry), typeof(DefaultViewRegistry));
+            graph.Add(typeof(CatalogBrowsingTasks), typeof(StubCatalogBrowsingTasks));
+            graph.Add(typeof(IEnumerable<RequestCommand>), typeof(StubSetOfCommands));
+            graph.Add(typeof(MapperRegistry), typeof(StubMapperRegistry));
+            graph.Add(typeof(ViewPathRegistry), typeof(StubViewPathRegistry));
+
+            foreach (var typeMap in graph)
+            {
+                factories.Add(typeMap.Key, new AutoWiringDependencyFactory(constructor_resolver, typeMap.Value, container));
+            }
+        
         }
     }
 }
