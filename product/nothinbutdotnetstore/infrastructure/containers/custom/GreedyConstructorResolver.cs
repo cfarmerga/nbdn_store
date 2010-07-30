@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Linq;
 using System.Reflection;
 
@@ -8,7 +8,7 @@ namespace nothinbutdotnetstore.infrastructure.containers.custom
     {
         public ConstructorInfo get_applicable_constructor_on(Type type)
         {
-            return type.GetConstructors().OrderByDescending(x => x.GetParameters().Length).First();
+            return type.GetConstructors().OrderByDescending(constructor => constructor.GetParameters().Count()).First();
         }
     }
 }

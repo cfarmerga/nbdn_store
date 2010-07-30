@@ -78,11 +78,11 @@
   <ItemGroup>
     <Compile Include="example\CalculatorSpecs.cs" />
     <Compile Include="infrastructure\AutoWiringDependencyFactorySpecs.cs" />
-    <Compile Include="infrastructure\ConstructorResolverSpecs.cs" />
     <Compile Include="infrastructure\ContainerSpecs.cs" />
     <Compile Include="infrastructure\CustomDependencyContainerSpecs.cs" />
     <Compile Include="infrastructure\DefaultDependencyFactoriesSpecs.cs" />
     <Compile Include="infrastructure\DefaultDependencyFactorySpecs.cs" />
+    <Compile Include="infrastructure\GreedyConstructorResolverSpecs.cs" />
     <Compile Include="infrastructure\LogSpecs.cs" />
     <Compile Include="infrastructure\MapperSpecs.cs" />
     <Compile Include="infrastructure\SingletonDependencyFactorySpecs.cs" />
