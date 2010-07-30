@@ -16,6 +16,9 @@ namespace nothinbutdotnetstore.infrastructure.containers.custom
             return (Dependency) an(typeof(Dependency));
         }
 
+        /// <summary>
+        /// Highlander 1 was the best
+        /// </summary>
         public object an(Type dependency_type)
         {
             try
