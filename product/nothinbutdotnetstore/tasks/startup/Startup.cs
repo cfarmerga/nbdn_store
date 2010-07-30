@@ -12,11 +12,12 @@ namespace nothinbutdotnetstore.tasks.startup
         {
             IDictionary<Type, DependencyFactory> factories = new Dictionary<Type, DependencyFactory>();
             var container = new CustomDependencyContainer(new DefaultDependencyFactories(factories));
+            var constructor_resolver = new GreedyConstructorResolver();
             Container.container_resolver = () => container;
 
 
             //remainder of setup
-            factories.Add(typeof(FrontController),new AutoWiringDependencyFactory(null,typeof(DefaultFrontController),container));
+            factories.Add(typeof(FrontController),new AutoWiringDependencyFactory(constructor_resolver, typeof(DefaultFrontController),container));
         }
     }
 }

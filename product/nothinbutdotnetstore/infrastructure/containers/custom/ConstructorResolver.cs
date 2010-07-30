@@ -13,7 +13,7 @@ namespace nothinbutdotnetstore.infrastructure.containers.custom
     {
         public ConstructorInfo get_applicable_constructor_on(Type type)
         {
-            return type.GetConstructors().OrderByDescending(ctorinfo => ctorinfo.GetParameters().Count()).First();
+            return type.GetConstructors().OrderByDescending(constructor => constructor.GetParameters().Count()).First();
         }
     }
 }
