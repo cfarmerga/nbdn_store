@@ -79,6 +79,7 @@
     <Compile Include="example\CalculatorSpecs.cs" />
     <Compile Include="infrastructure\ContainerSpecs.cs" />
     <Compile Include="infrastructure\CustomDependencyContainerSpecs.cs" />
+    <Compile Include="infrastructure\DefeaultDependencyFactoriesSpecs.cs" />
     <Compile Include="infrastructure\LogSpecs.cs" />
     <Compile Include="infrastructure\MapperSpecs.cs" />
     <Compile Include="MessageGeneratorSpecs.cs" />
