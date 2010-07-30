@@ -1,4 +1,3 @@
- 
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.infrastructure.containers;
@@ -11,7 +10,6 @@ namespace nothinbutdotnetstore.specs.tasks
     {
         public abstract class concern : Observes
         {
-
         }
 
         [Subject(typeof(Startup))]
@@ -20,12 +18,8 @@ namespace nothinbutdotnetstore.specs.tasks
             Because b = () =>
                 Startup.run();
 
-            It should_be_ready_to_run_the_application = () =>
-            {
-                Container.retrieve.an<FrontController>().ShouldBeAn<DefaultFrontController>();
-            };
-
-
+            It should_be_ready_to_run_the_application =
+                () => { Container.retrieve.an<FrontController>().ShouldBeAn<DefaultFrontController>(); };
         }
     }
 }

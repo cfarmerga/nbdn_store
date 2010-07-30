@@ -66,6 +66,8 @@
     <Compile Include="infrastructure\categorization\FactoryAttribute.cs" />
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\ContainerResolver.cs" />
+    <Compile Include="infrastructure\containers\custom\AutoWiringDependencyFactory.cs" />
+    <Compile Include="infrastructure\containers\custom\ConstructorResolver.cs" />
     <Compile Include="infrastructure\containers\custom\CustomDependencyContainer.cs" />
     <Compile Include="infrastructure\containers\custom\DefaultDependencyFactories.cs" />
     <Compile Include="infrastructure\containers\custom\DefaultDependencyFactory.cs" />
