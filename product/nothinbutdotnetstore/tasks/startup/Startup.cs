@@ -19,23 +19,24 @@ namespace nothinbutdotnetstore.tasks.startup
             var constructor_resolver = new GreedyConstructorResolver();
             Container.container_resolver = () => container;
 
-            Dictionary<Type, Type> graph = new Dictionary<Type, Type>();
+            Action<Type, Type> add_factory_to_dependency_factories =
+                (contract_type, implementation_type) =>
+                factories.Add(contract_type,
+                              new AutoWiringDependencyFactory(constructor_resolver, implementation_type, container));
 
-            graph.Add(typeof(CommandRegistry), typeof(DefaultCommandRegistry));
-            graph.Add(typeof(FrontController), typeof(DefaultFrontController));
-            graph.Add(typeof(Mapper), typeof(DefaultMapper));
-            graph.Add(typeof(RequestFactory), typeof(DefaultRequestFactory));
-            graph.Add(typeof(ResponseEngine), typeof(DefaultResponseEngine));
-            graph.Add(typeof(ViewRegistry), typeof(DefaultViewRegistry));
-            graph.Add(typeof(CatalogBrowsingTasks), typeof(StubCatalogBrowsingTasks));
-            graph.Add(typeof(IEnumerable<RequestCommand>), typeof(StubSetOfCommands));
-            graph.Add(typeof(MapperRegistry), typeof(StubMapperRegistry));
-            graph.Add(typeof(ViewPathRegistry), typeof(StubViewPathRegistry));
 
-            foreach (var typeMap in graph)
-            {
-                factories.Add(typeMap.Key, new AutoWiringDependencyFactory(constructor_resolver, typeMap.Value, container));
-            }
+           
+            add_factory_to_dependency_factories(typeof(CommandRegistry), typeof(DefaultCommandRegistry));
+            add_factory_to_dependency_factories(typeof(FrontController), typeof(DefaultFrontController));
+            add_factory_to_dependency_factories(typeof(Mapper), typeof(DefaultMapper));
+            add_factory_to_dependency_factories(typeof(RequestFactory), typeof(DefaultRequestFactory));
+            add_factory_to_dependency_factories(typeof(ResponseEngine), typeof(DefaultResponseEngine));
+            add_factory_to_dependency_factories(typeof(ViewRegistry), typeof(DefaultViewRegistry));
+            add_factory_to_dependency_factories(typeof(CatalogBrowsingTasks), typeof(StubCatalogBrowsingTasks));
+            add_factory_to_dependency_factories(typeof(IEnumerable<RequestCommand>), typeof(StubSetOfCommands));
+            add_factory_to_dependency_factories(typeof(MapperRegistry), typeof(StubMapperRegistry));
+            add_factory_to_dependency_factories(typeof(ViewPathRegistry), typeof(StubViewPathRegistry));
+
         
         }
     }
