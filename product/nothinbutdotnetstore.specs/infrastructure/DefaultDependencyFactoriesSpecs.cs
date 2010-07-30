@@ -7,12 +7,11 @@
 
 namespace nothinbutdotnetstore.specs.infrastructure
  {   
-     public class DefeaultDependencyFactoriesSpecs
+     public class DefaultDependencyFactoriesSpecs
      {
          public abstract class concern : Observes<DependencyFactories,
                                              DefaultDependencyFactories>
          {
-
              Establish c = () =>
              {
                  the_factory = an<DependencyFactory>();
@@ -27,7 +26,6 @@ namespace nothinbutdotnetstore.specs.infrastructure
          [Subject(typeof(DefaultDependencyFactories))]
          public class when_getting_the_dependency_factory_for_a_type_and_it_has_the_factory : concern
          {
-
              Establish c = () =>
              {
                  factories.Add(typeof(IDbConnection),the_factory);

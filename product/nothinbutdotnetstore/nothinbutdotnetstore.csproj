@@ -68,6 +68,7 @@
     <Compile Include="infrastructure\containers\ContainerResolver.cs" />
     <Compile Include="infrastructure\containers\custom\CustomDependencyContainer.cs" />
     <Compile Include="infrastructure\containers\custom\DefaultDependencyFactories.cs" />
+    <Compile Include="infrastructure\containers\custom\DefaultDependencyFactory.cs" />
     <Compile Include="infrastructure\containers\custom\DepedencyCreationException.cs" />
     <Compile Include="infrastructure\containers\custom\DependencyFactories.cs" />
     <Compile Include="infrastructure\containers\custom\DependencyFactory.cs" />
