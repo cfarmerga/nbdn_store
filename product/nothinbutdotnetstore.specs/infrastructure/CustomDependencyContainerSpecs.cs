@@ -38,7 +38,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
              };
 
              Because b = () =>
-                 result = an<IDbConnection>();
+                 result = sut.an<IDbConnection>();
 
              It should_return_the_dependency_created_using_the_dependency_factory = () =>
                  result.ShouldEqual(connection);
