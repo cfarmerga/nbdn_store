@@ -1,3 +1,5 @@
+using nothinbutdotnetstore.infrastructure.logging;
+
 namespace nothinbutdotnetstore.web.core
 {
     public class DefaultFrontController : FrontController

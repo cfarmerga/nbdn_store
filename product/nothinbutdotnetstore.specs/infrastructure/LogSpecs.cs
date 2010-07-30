@@ -38,7 +38,7 @@ namespace nothinbutdotnetstore.specs.infrastructure
             Because b = () =>
                 result = Log.an;
 
-            It should_return_the_logging_api_it_was_configured_to_use = () =>
+            It should_return_the_logging_api_bound_to_the_type_that_requested_logging = () =>
                 result.ShouldEqual(the_logger);
 
 

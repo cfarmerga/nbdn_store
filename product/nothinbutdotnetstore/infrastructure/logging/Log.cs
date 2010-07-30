@@ -6,13 +6,14 @@ namespace nothinbutdotnetstore.infrastructure.logging
 {
     public class Log
     {
-
         public static Logger an
         {
-            get {
-                var stackFrame = new StackFrame(1);
-                return Container.retrieve.an<LoggerFactory>().get_logger_bound_to(stackFrame.GetMethod().DeclaringType);
-            }
+            get { return Container.retrieve.an<LoggerFactory>().get_logger_bound_to(get_the_calling_type()); }
+        }
+
+        static Type get_the_calling_type()
+        {
+            return new StackFrame(2).GetMethod().DeclaringType;
         }
     }
 }
