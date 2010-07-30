@@ -67,6 +67,8 @@
     <Compile Include="infrastructure\containers\Container.cs" />
     <Compile Include="infrastructure\containers\ContainerResolver.cs" />
     <Compile Include="infrastructure\containers\custom\CustomDependencyContainer.cs" />
+    <Compile Include="infrastructure\containers\custom\DependencyFactories.cs" />
+    <Compile Include="infrastructure\containers\custom\DependencyFactory.cs" />
     <Compile Include="infrastructure\containers\DependencyContainer.cs" />
     <Compile Include="infrastructure\DefaultMapper.cs" />
     <Compile Include="infrastructure\DiscreteMapper.cs" />
