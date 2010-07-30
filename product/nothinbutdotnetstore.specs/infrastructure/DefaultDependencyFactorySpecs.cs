@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
 using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
-using nothinbutdotnetstore.infrastructure.containers;
 using nothinbutdotnetstore.infrastructure.containers.custom;
 
 namespace nothinbutdotnetstore.specs.infrastructure
