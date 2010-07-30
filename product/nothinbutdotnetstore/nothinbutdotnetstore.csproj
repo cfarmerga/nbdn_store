@@ -88,6 +88,7 @@
     <Compile Include="model\Department.cs" />
     <Compile Include="model\Product.cs" />
     <Compile Include="tasks\CatalogBrowsingTasks.cs" />
+    <Compile Include="tasks\startup\Startup.cs" />
     <Compile Include="tasks\stubs\StubCatalogBrowsingTasks.cs" />
     <Compile Include="web\application\catalogbrowsing\CatalogBrowsingController.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewMainDepartments.cs" />
