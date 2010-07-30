@@ -17,7 +17,6 @@ namespace nothinbutdotnetstore.specs.web
          {
              Establish c = () =>
              {
-                 key_name = "sdfsdf";
                  provide_a_basic_sut_constructor_argument(key_name);
              };
 

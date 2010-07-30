@@ -5,7 +5,9 @@ using Machine.Specifications;
 using Machine.Specifications.DevelopWithPassion.Rhino;
 using nothinbutdotnetstore.infrastructure.containers;
 using nothinbutdotnetstore.infrastructure.containers.custom;
+using nothinbutdotnetstore.web.application;
 using Rhino.Mocks;
+using Machine.Specifications.DevelopWithPassion.Extensions;
 
 namespace nothinbutdotnetstore.specs.infrastructure
 {
@@ -21,19 +23,23 @@ namespace nothinbutdotnetstore.specs.infrastructure
         {
             Establish c = () =>
             {
-                the_constructor =
-                    typeof(OurItemWithDependencies).GetConstructors().OrderByDescending(x => x.GetParameters().Count())
-                        .First();
-
-                provide_a_basic_sut_constructor_argument(typeof(OurItemWithDependencies));
                 constructor_resolver = the_dependency<ConstructorResolver>();
-                constructor_resolver.Stub(x => x.get_applicable_constructor_on(typeof(OurItemWithDependencies))).Return
-                    (the_constructor);
+                provide_a_basic_sut_constructor_argument(typeof(OurItemWithDependencies));
                 container = the_dependency<DependencyContainer>();
 
                 the_connection = an<IDbConnection>();
                 the_command = an<IDbCommand>();
                 the_adapter = an<IDbDataAdapter>();
+
+                the_constructor =
+                    typeof(OurItemWithDependencies).GetConstructors()
+                        .OrderByDescending(x => x.GetParameters()
+                        .Count())
+                        .First();
+
+                constructor_resolver.Stub(x => x.get_applicable_constructor_on(typeof(OurItemWithDependencies))).Return
+                    (the_constructor);
+
 
                 container.Stub(x => x.an(typeof(IDbConnection))).Return(the_connection);
                 container.Stub(x => x.an(typeof(IDbCommand))).Return(the_command);
